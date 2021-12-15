@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import useCrud from "../hooks/useCrud";
 
 export default function Posts(props) {
-  const crud = useCrud("https://jsonplaceholder.typicode.com/posts");
+  //const crud = useCrud("https://jsonplaceholder.typicode.com/posts");
+  //const crud = useCrud("http://localhost:8080/posts");
+  const crud = useCrud("/posts");
   const [posts, setPosts] = useState(null);
 
   function carregarPosts() {

@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Posts from "./components/Posts";
 import Post from "./components/Post";
 import App from "./App";
+import NewPost from "./components/NewPost";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
@@ -11,6 +12,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/novoPost" element={<NewPost />} />
         <Route path="posts" element={<Posts />} />
         <Route path="post" element={<Post />}>
           <Route path=":postid" element={<Post />} />

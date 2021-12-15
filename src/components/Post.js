@@ -5,10 +5,9 @@ import useCrud from "../hooks/useCrud";
 export default function Post(props) {
   const params = useParams();
   const postid = params.postid;
-
-
   
-  const crud = useCrud("https://jsonplaceholder.typicode.com");
+  //const crud = useCrud("https://jsonplaceholder.typicode.com");
+  const crud = useCrud("http://localhost:8080");
   
   const [post, setPost] = useState(null);
   const [comments, setComments] = useState(null);
@@ -47,7 +46,7 @@ export default function Post(props) {
      />   
      <br/>
      {comments?<ul>
-       {comments.map( (umComment) => <li key={umComment.id} > {umComment.email + '/' +umComment.name}</li>)}
+       {comments.map( (umComment) => <li key={umComment.id} > {umComment.email + '/' +umComment.body}</li>)}
      </ul>:<>Carregando</>}
      <button onClick={salvarPost}>Salvar</button> 
      
