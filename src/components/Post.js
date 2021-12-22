@@ -29,8 +29,8 @@ export default function Post(props) {
   };
   
   function salvarPost() {
-    setPost(null);
-    crud.put("/posts/" + post.id, post).then((res) => {
+    setPost(null);    
+    crud.patch("/posts/" + post.id, post).then((res) => {
       setPost(res);
     });
   }
@@ -39,6 +39,7 @@ export default function Post(props) {
   {post?<> 
     <h1>{post.title}</h1>
     <h2>{post.id}</h2>
+    <h3>publico={post.publico?'sim':'não'}</h3>
     <textarea 
       value={post.body} 
       style={{margin:"0px", width: '586px', height: '98px'}}
